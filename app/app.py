@@ -12,6 +12,11 @@ def showSignUp():
 @app.route('/signIn')
 def signUp():
     name = request.form['inputName']
+@app.route('/grocery')
+
+def grocery():
+    food = ["Beer", "Steak" , "Chicken" , "Tacos"]
+    return render_template("grocery.html", food=food)
 
 
 if __name__ == "__main__":
