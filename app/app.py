@@ -14,6 +14,7 @@ def signUp():
     name = request.form['inputName']
 @app.route('/grocery')
 
+# Example of passing content to html
 def grocery():
     food = ["Beer", "Steak" , "Chicken" , "Tacos"]
     return render_template("grocery.html", food=food)
