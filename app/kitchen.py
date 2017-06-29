@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask_mail import Mail, Message
-
+import random
 
 app = Flask(__name__)
 
@@ -16,14 +16,17 @@ mail = Mail(app)
 
 @app.route("/main")
 def main():
-    return render_template("kitchen.html")
+
+    return render_template("kitchen.html", order="Pour chipotle sauce over my naked body")
 
 @app.route("/done")
 def done():
     msg = Message('Hello', sender='upseats@gmail.com', recipients=["mthoburn96@gmail.com"])
     msg.body = "This is a test"
-    mail.send(msg)
-    return render_template("kitchen.html")
-
+    #mail.send(msg)
+    return render_template("kitchen.html",order=getOrder())
+def getOrder():
+    orders = ["Pizza","CheeseBurger","Sandwich","Fresh Dick","Fresh Dick with Chipotle Sauce","Just Chipotle Sauce"]
+    return random.choice(orders)
 if __name__ == "__main__":
     app.run()
