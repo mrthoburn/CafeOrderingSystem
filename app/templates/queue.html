@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Orders</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Go To</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for order, comment, orderNum in orders %}
+            <tr>
+            <td>{{order}}</td>
+            <td>{{comment}}</td>
+            <td>{{orderNum}}</td>
+            <td>  <a class="btn btn-lg btn-success" href="makeOrder" role="button">fuck</a> </td>
+          </tr>
+        {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
