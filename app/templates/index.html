@@ -1,47 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>UPS Eats</title>
-
-
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
-
-
-</head>
-
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="Styles.css" rel="stylesheet">
+    <link href="static/style.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Montserrat|Muli|Pacifico" rel="stylesheet"></head>
 <body>
 
-    <div class="container">
-        <div class="header">
-            <nav>
-                <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="#">Home</a>
-                    </li>
-                    <li role="presentation"><a href="#">Sign In</a>
-                    </li>
-                    <li role="presentation"><a href="showSignUp">Sign Up</a>
-                    </li>
-                </ul>
-            </nav>
-            <h3 class="text-muted">UPS Eats</h3>
-        </div>
 
-        <div class="jumbotron">
-            <h1>UPS Eats</h1>
-            <p class="lead"></p>
-            <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Sign up today</a>
-            </p>
-        </div>
+<div id="nav">
+    <ul>
+        <li><a class="pages" onclick="document.getElementById('id01').style.display='block'">Login</a></li>
+        <li><a class="" href=""><img id="logo" src="http://globalsummit.uscsupplychain.com/wp-content/uploads/2016/05/ups.gif"></a></li>
+        <li><a class="pages" href="cart">Cart</a></li>
+    </ul>
+</div>
 
+<div class="cafeBack">
+    <h1 id="UPSEats">UPS Eats</h1>
+</div>
 
-        <footer class="footer">
-            <p>&copy; Matt Thoburn 2017</p>
-        </footer>
-
+<div id="menuItems">
+    <div class="item">
+        <img class="m1" src="https://www.panerabread.com/panerabread/menu/details/bacon-turkey-bravo-sandwich-tce-whole.jpg/_jcr_content/renditions/bacon-turkey-bravo-sandwich-tce-whole.desktop.jpeg"/>
+        <p class="description">Sandwich <br><br>$7.99
+            <button type="button" class="orderBtn">Order</button>
+        </p>
     </div>
-</body>
+    <div class="item">
+        <img class="m1" src="https://i.ytimg.com/vi/1X6OAucemtE/maxresdefault.jpg"/>
+        <p class="description">Pizza<br><br>$7.99
+            <button type="button" class="orderBtn">Order</button>
+        </p>
+    </div>
+    <div class="item">
+        <img class="m1" src="https://www.tgifridays.com/content/dam/www/bb/dist/img/jack_daniels_burger.jpg"/>
+        <p class="description">Burger<br><br>$7.99
+            <button type="button" class="orderBtn">Order</button>
+        </p>
+    </div>
+    <div class="item">
+        <img class="m1" src="https://ichef-1.bbci.co.uk/news/660/cpsprodpb/10747/production/_92499376_thinkstockphotos-464856636.jpg"/>
+        <p class="description">Salad<br><br>$7.99
+            <button type="button" class="orderBtn">Order</button>
+        </p>
+    </div>
+    <div class="item">
+        <img class="m1" src="http://img.wennermedia.com/article-leads-horizontal/taco-bamba_carnitas-0b5aaaf7-6ef0-4c90-8d41-3924cd51e921.jpg"/>
+        <p class="description">Tacos<br><br>$7.99
+            <button type="button" class="orderBtn">Order</button>
+        </p>
+    </div>
+    <div class="item">
+        <img class="m1" src="http://ww2.hdnux.com/photos/42/11/22/8950949/11/rawImage.jpg"/>
+        <p class="description">Drinks<br><br>$7.99
+            <button type="button" class="orderBtn">Order</button>
+        </p>
+    </div>
+</div>
 
+
+<!--<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>-->
+
+<div id="id01" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php">
+
+        <div class="container">
+            <label class="login"><b>Username</b></label>
+            <input class="login" type="text" placeholder="Enter Username" name="uname" required>
+
+            <label class="login"><b>Password</b></label>
+            <input  class="login" type="password" placeholder="Enter Password" name="psw" required>
+
+            <button class="loginBtn" type="submit">Login</button>
+            <input type="checkbox" > Remember me
+        </div>
+
+        <div class="container">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">Password?</a></span>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+</body>
 </html>

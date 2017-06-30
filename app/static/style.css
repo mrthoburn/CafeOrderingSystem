@@ -1,1 +1,268 @@
-//Sample Style
+body {
+    background-color: white;
+}
+
+#head {
+    background-color: #351c15;
+    height: 10vh;
+}
+
+#logo {
+    position: relative;
+    top: 5%;
+    left: 1%;
+    width: auto;
+    height: 60px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #351c15;
+    height: 75px;
+}
+
+li {
+    float: left;
+    position: relative;
+    left: 8%;
+    margin: 0;
+    width: 28%;
+    height: auto;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    background-color: transparent;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    height: 2vh;
+}
+
+li a:hover:not(.active) {
+    color: #ffb500;
+    font-size: 22px;
+    padding: 12px 14px;
+    height: auto;
+}
+
+.active {
+    color: #ffb500;
+    font-size: 22px;
+    padding: 14px 16px;
+    height: auto;
+}
+
+#UPSEats {
+    position: relative;
+    top: 80px;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    left: 22px;
+    /*font-family: 'Muli', sans-serif;*/
+    /*font-family: 'Montserrat', sans-serif;*/
+    /*font-family: 'Pacifico', cursive;*/
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+#menuItems {
+    position: relative;
+    top: 25px;
+    left: 0%;
+    width: 100%;
+
+}
+
+.pages {
+    position: relative;
+    top: 10px;
+}
+
+.item {
+    float: left;
+    text-align: left;
+    padding-left: 7%;
+    max-width: 300px;
+    padding-bottom: 30px;
+}
+
+.m1 {
+    padding-left: 0;
+    width: 300px;
+    height: 250px;
+}
+
+.description {
+    max-width: 250px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.orderBtn {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    background-color: #fcb004;
+    border-radius: 12px;
+    border: 1px solid #fcb004;
+    font-size: 16px;
+    width: 100px;
+    float: right;
+}
+
+.cafeBack {
+    height: 300px;
+    position: relative;
+    top: 9px;
+    background: url("https://designtoimprovelife.dk/wp-content/uploads/2015/05/AP-blog-organic-food-1045x515-1045x515.jpg") no-repeat center;
+    overflow: hidden;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+}
+
+
+
+/*login in*/
+
+.login {
+    font-family: 'Muli', sans-serif;
+}
+
+.loginBtn {
+    font-family: 'Muli', sans-serif;
+    background-color: #f0ad4e;
+    font-size: 25px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #df9e4c;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid rgba(223, 223, 223, 0.46);
+}
+
+.cancelbtn:hover {
+    background-color: #eeeeee;
+    color: red;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+}

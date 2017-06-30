@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route("/main")
 def main():
-    return render_template("homePage.html")
+    return render_template("index.html")
 
 @app.route("/cart")
 def cart():

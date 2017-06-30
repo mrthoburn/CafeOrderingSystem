@@ -29,7 +29,6 @@ def queue():
     orderNum = request.args.get("orderNum")
     #Tell user that their order is ready
     recipient = theQueue[getQueueIndex(orderNum)][4]
-    print recipient
     msg = Message('Hello', sender='upseats@gmail.com', recipients=[recipient])
     msg.body = "This is a test"
     #mail.send(msg)
