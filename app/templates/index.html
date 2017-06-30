@@ -21,46 +21,83 @@
 <div class="cafeBack">
     <h1 id="UPSEats">UPS Eats</h1>
 </div>
-
+<script>
+            function sandwichAlertBox()
+            {
+            alert("Sandwich has been added to the cart!");
+            }
+        </script>
 <div id="menuItems">
     <div class="item">
         <img class="m1" src="https://www.panerabread.com/panerabread/menu/details/bacon-turkey-bravo-sandwich-tce-whole.jpg/_jcr_content/renditions/bacon-turkey-bravo-sandwich-tce-whole.desktop.jpeg"/>
         <p class="description">Sandwich <br><br>$5.99
-            <button onclick="location.href='addToCart?item=Sandwich&comment=none&price=5.99'" type="button" class="orderBtn">order</button>
+            <button onclick="sandwichAlertBox(); location.href='addToCart?item=Sandwich&comment=none&price=5.99'" type="button" class="orderBtn">order</button>
+
         </p>
     </div>
+    <script>
+            function pizzaAlertBox()
+            {
+            alert("Pizza has been added to the cart!");
+            }
+        </script>
     <div class="item">
         <img class="m1" src="https://i.ytimg.com/vi/1X6OAucemtE/maxresdefault.jpg"/>
         <p class="description">Pizza<br><br>$6.99
-            <button onclick="location.href='addToCart?item=Pizza&comment=none&price=6.99'" type="button" class="orderBtn">order</button>
+            <button onclick="pizzaAlertBox(); location.href='addToCart?item=Pizza&comment=none&price=6.99' " type="button" class="orderBtn">order</button>
 
         </p>
+
     </div>
+    <script>
+            function hamburgerAlertBox()
+            {
+            alert("Hamburger has been added to the cart!");
+            }
+        </script>
     <div class="item">
         <img class="m1" src="https://www.tgifridays.com/content/dam/www/bb/dist/img/jack_daniels_burger.jpg"/>
         <p class="description">Burger<br><br>$7.99
-            <button onclick="location.href='addToCart?item=Burger&comment=none&price=7.99'" type="button" class="orderBtn">order</button>
+            <button onclick="hamburgerAlertBox(); location.href='addToCart?item=Burger&comment=none&price=7.99'" type="button" class="orderBtn">order</button>
 
         </p>
     </div>
+    <script>
+            function saladAlertBox()
+            {
+            alert("Salad has been added to the cart!");
+            }
+        </script>
     <div class="item">
         <img class="m1" src="https://ichef-1.bbci.co.uk/news/660/cpsprodpb/10747/production/_92499376_thinkstockphotos-464856636.jpg"/>
         <p class="description">Salad<br><br>$5.99
-            <button onclick="location.href='addToCart?item=Salad&comment=none&price=5.99'" type="button" class="orderBtn">order</button>
+            <button onclick="saladAlertBox(); location.href='addToCart?item=Salad&comment=none&price=5.99'" type="button" class="orderBtn">order</button>
 
         </p>
     </div>
+    <script>
+            function tacoAlertBox()
+            {
+            alert("Taco has been added to the cart!");
+            }
+        </script>
     <div class="item">
         <img class="m1" src="http://img.wennermedia.com/article-leads-horizontal/taco-bamba_carnitas-0b5aaaf7-6ef0-4c90-8d41-3924cd51e921.jpg"/>
         <p class="description">Tacos<br><br>$4.99
-            <button onclick="location.href='addToCart?item=Taco&comment=none&price=4.99'" type="button" class="orderBtn">order</button>
+            <button onclick="tacoAlertBox(); location.href='addToCart?item=Taco&comment=none&price=4.99'" type="button" class="orderBtn">order</button>
 
         </p>
     </div>
+      <script>
+            function drinksAlertBox()
+            {
+            alert("Drinks has been added to the cart!");
+            }
+        </script>
     <div class="item">
         <img class="m1" src="http://ww2.hdnux.com/photos/42/11/22/8950949/11/rawImage.jpg"/>
         <p class="description">Drinks<br><br>$1.99
-            <button onclick="location.href='addToCart?item=Drink&comment=none&price=1.99'" type="button" class="orderBtn">order</button>
+            <button onclick="drinksAlertBox(); location.href='addToCart?item=Drink&comment=none&price=1.99'" type="button" class="orderBtn">order</button>
 
         </p>
     </div>
