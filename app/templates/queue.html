@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>UPS Eats</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -16,20 +16,18 @@
     <thead>
       <tr>
         <th>Item</th>
-        <th>Default Ingredients</th>
         <th>Comment/Substitution</th>
         <th>Order #</th>
         <th>Mark as Done</th>
       </tr>
     </thead>
     <tbody>
-        {% for order, ingredients, comment, orderNum,email in orders %}
+        {% for orderNum, order, comment, price,email in orders %}
             <tr>
             <td>{{order}}</td>
-            <td>{{ingredients}}</td>
             <td>{{comment}}</td>
             <td>{{orderNum}}</td>
-            <td>  <a class="btn btn-lg btn-success" href="queue?orderNum={{orderNum}}" role="button">Done</a> </td>
+            <td>  <a class="btn btn-lg btn-success" href="queue?item={{order}}&comment={{comment}}&orderNum={{orderNum}}" role="button">Done</a> </td>
           </tr>
         {% endfor %}
 

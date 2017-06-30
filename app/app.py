@@ -13,10 +13,15 @@ def cart():
     price = 0
     for tup in order:
         price += tup[2]
-    return render_template("cart.html",order=order,total=price)
+    return render_template("cart.html",order=order,total=price,orderNum=12345)
 
 @app.route("/submit")
 def submit():
+    num = int(request.args.get("orderNum"))
+    with open("order","w+") as f:
+        for item in order:
+            newTuple = (num,) + item + ("mthoburn96@gmail.com",)
+            f.write(str(newTuple) +"\n")
     return render_template("submit.html")
 
 @app.route("/addToCart")

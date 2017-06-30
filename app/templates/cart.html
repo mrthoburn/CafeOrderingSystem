@@ -11,7 +11,7 @@
 <body>
 
 <div class="container">
-  <h2>Order #: 12345</h2>
+  <h2>Order #:{{orderNum}}</h2>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -32,7 +32,7 @@
     </tbody>
   </table>
     <p>Total: ${{total}}</p>
-  <a href="submit" class="btn-success btn-lg" role="button">Place Order</a>
+  <a href="submit?orderNum={{orderNum}}" class="btn-success btn-lg" role="button">Place Order</a>
 
 </div>
 
