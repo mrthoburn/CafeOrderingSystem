@@ -28,7 +28,9 @@ def makeOrder():
 def queue():
     orderNum = request.args.get("orderNum")
     #Tell user that their order is ready
-    msg = Message('Hello', sender='upseats@gmail.com', recipients=["mthoburn96@gmail.com"])
+    recipient = theQueue[getQueueIndex(orderNum)][4]
+    print recipient
+    msg = Message('Hello', sender='upseats@gmail.com', recipients=[recipient])
     msg.body = "This is a test"
     #mail.send(msg)
 
@@ -39,26 +41,27 @@ def queue():
 #Temporary method to make fake orders
 def getOrder():
     orders = ["Pizza","CheeseBurger","Sandwich","Deez nuts","Deez nuts with Chipotle Sauce","Just Chipotle Sauce","Spagooter"]
-
+    ingredients = ["apples, banannas", "chipotles, sauce", "the secret ingredient ;)"]
     comments =["Nothing on it", "Extra chipotle sauce", "n/a"]
-    return (random.choice(orders),"Deez Nuts",random.choice(comments),random.randint(1000,9999))
+    recipients = ["usr1@ups.com","usr2@ups.com","usr3@ups.com"]
+    return (random.choice(orders),random.choice(ingredients),random.choice(comments),random.randint(1000,9999),random.choice(recipients))
 
 def initQueue():
     for i in range(10):
         theQueue.append(getOrder())
 
 def updateQueue(orderNum):
-    index = 0
-    j = 0
-
-    for tup in theQueue:
-        if tup[3] == int(orderNum):
-            index = j
-        j += 1
-    print index, theQueue[index]
+    index = getQueueIndex(orderNum)
 
     for i in range(index,len(theQueue)-1):
         theQueue[i] = theQueue[i+1]
     theQueue[-1] = getOrder()
+
+def getQueueIndex(orderNum):
+    j = 0
+    for tup in theQueue:
+        if tup[3] == int(orderNum):
+            return j
+        j += 1
 if __name__ == "__main__":
     app.run()

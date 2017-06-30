@@ -3,23 +3,15 @@ app = Flask(__name__)
 
 @app.route("/main")
 def main():
-    return render_template("index.html")
+    return render_template("homePage.html")
 
-@app.route('/showSignUp')
-def showSignUp():
-    return render_template('signup.html')
+@app.route("/cart")
+def cart():
+    return render_template("cart.html")
 
-@app.route('/signIn')
-def signUp():
-    name = request.form['inputName']
-@app.route('/grocery')
-
-# Example of passing content to html
-def grocery():
-    food = ["Beer", "Steak" , "Chicken" , "Tacos"]
-    return render_template("grocery.html", food=food)
-
-
+@app.route("/submit")
+def submit():
+    return render_template("submit.html")
 if __name__ == "__main__":
     app.run()
 

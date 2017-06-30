@@ -11,30 +11,32 @@
 <body>
 
 <div class="container">
-  <h2>Orders</h2>
+  <h2>Order #: 12345</h2>
   <table class="table table-striped">
     <thead>
       <tr>
         <th>Item</th>
-        <th>Default Ingredients</th>
         <th>Comment/Substitution</th>
-        <th>Order #</th>
-        <th>Mark as Done</th>
+          <th>Price</th>
       </tr>
     </thead>
     <tbody>
-        {% for order, ingredients, comment, orderNum,email in orders %}
-            <tr>
-            <td>{{order}}</td>
-            <td>{{ingredients}}</td>
-            <td>{{comment}}</td>
-            <td>{{orderNum}}</td>
-            <td>  <a class="btn btn-lg btn-success" href="queue?orderNum={{orderNum}}" role="button">Done</a> </td>
-          </tr>
-        {% endfor %}
+        <tr>
+            <td>Pizza</td>
+            <td>Extra Cheese</td>
+            <td>$1,000,000</td>
+        </tr>
+        <tr>
+            <td>Coke</td>
+            <td>Not the beverage</td>
+            <td>$20</td>
+        </tr>
 
     </tbody>
   </table>
+    <p>Total: $1,000,020</p>
+  <a href="submit" class="btn-success btn-lg" role="button">Place Order</a>
+
 </div>
 
 </body>
