@@ -17,24 +17,21 @@
       <tr>
         <th>Item</th>
         <th>Comment/Substitution</th>
-          <th>Price</th>
+        <th>Price</th>
       </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Pizza</td>
-            <td>Extra Cheese</td>
-            <td>$1,000,000</td>
-        </tr>
-        <tr>
-            <td>Coke</td>
-            <td>Not the beverage</td>
-            <td>$20</td>
-        </tr>
+        {% for item, comments, price in order %}
+            <tr>
+            <td>{{item}}</td>
+            <td>{{comments}}</td>
+            <td>${{price}}</td>
+          </tr>
+        {% endfor %}
 
     </tbody>
   </table>
-    <p>Total: $1,000,020</p>
+    <p>Total: ${{total}}</p>
   <a href="submit" class="btn-success btn-lg" role="button">Place Order</a>
 
 </div>

@@ -7,7 +7,11 @@ def main():
 
 @app.route("/cart")
 def cart():
-    return render_template("cart.html")
+    order = [("Pizza","Exra Cheese",7),("Coke","Not the Beverage",2),("Cookie","extra cookie",1)]
+    price = 0
+    for tup in order:
+        price += tup[2]
+    return render_template("cart.html",order=order,total=price)
 
 @app.route("/submit")
 def submit():
