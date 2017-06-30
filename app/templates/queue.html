@@ -12,20 +12,24 @@
 
 <div class="container">
   <h2>Orders</h2>
-  <table class="table">
+  <table class="table table-striped">
     <thead>
       <tr>
         <th>Item</th>
-        <th>Go To</th>
+        <th>Default Ingredients</th>
+        <th>Comment/Substitution</th>
+        <th>Order #</th>
+        <th>Mark as Done</th>
       </tr>
     </thead>
     <tbody>
-        {% for order, comment, orderNum in orders %}
+        {% for order, ingredients, comment, orderNum in orders %}
             <tr>
             <td>{{order}}</td>
+            <td>{{ingredients}}</td>
             <td>{{comment}}</td>
             <td>{{orderNum}}</td>
-            <td>  <a class="btn btn-lg btn-success" href="makeOrder" role="button">fuck</a> </td>
+            <td>  <a class="btn btn-lg btn-success" href="queue?orderNum={{orderNum}}" role="button">Done</a> </td>
           </tr>
         {% endfor %}
 

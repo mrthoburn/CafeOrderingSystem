@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_mail import Mail, Message
 import random
 
@@ -12,38 +12,53 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
 mail = Mail(app)
-
+theQueue = list()
 
 @app.route("/main")
 def main():
-    orders = list()
-    for i in range(10):
-        orders.append(getOrder())
-    return render_template("queue.html", orders=orders)
+    initQueue()
+    return render_template("queue.html", orders=theQueue)
 
-@app.route("/makeOrder", methods = ["POST"])
+@app.route("/makeOrder")
 def makeOrder():
     order = getOrder()
     return render_template("kitchen.html",orders=order[0],comment=order[1],orderNum=order[2])
 
 @app.route("/queue")
 def queue():
+    orderNum = request.args.get("orderNum")
     #Tell user that their order is ready
     msg = Message('Hello', sender='upseats@gmail.com', recipients=["mthoburn96@gmail.com"])
     msg.body = "This is a test"
     #mail.send(msg)
 
     #Re-render the queue
-    orders = list()
-    for i in range(10):
-        orders.append(getOrder())
-    return render_template("queue.html", orders=orders)
+    updateQueue(orderNum)
+    return render_template("queue.html", orders=theQueue)
 
 #Temporary method to make fake orders
 def getOrder():
-    orders = ["Pizza","CheeseBurger","Sandwich","Fresh Dick","Fresh Dick with Chipotle Sauce","Just Chipotle Sauce","Pour chipotle sauce over my naked body"]
-    comments =["Nothing on it", "Extra chipotle sauce", "its been a rough day, sneak some whiskey in for me"]
-    return (random.choice(orders), random.choice(comments),random.randint(1000,9999))
+    orders = ["Pizza","CheeseBurger","Sandwich","Deez nuts","Deez nuts with Chipotle Sauce","Just Chipotle Sauce","Spagooter"]
 
+    comments =["Nothing on it", "Extra chipotle sauce", "n/a"]
+    return (random.choice(orders),"Deez Nuts",random.choice(comments),random.randint(1000,9999))
+
+def initQueue():
+    for i in range(10):
+        theQueue.append(getOrder())
+
+def updateQueue(orderNum):
+    index = 0
+    j = 0
+
+    for tup in theQueue:
+        if tup[3] == int(orderNum):
+            index = j
+        j += 1
+    print index, theQueue[index]
+
+    for i in range(index,len(theQueue)-1):
+        theQueue[i] = theQueue[i+1]
+    theQueue[-1] = getOrder()
 if __name__ == "__main__":
     app.run()
